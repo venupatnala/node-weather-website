@@ -5,6 +5,8 @@ const forecast = require('./utils/forecast')
 const geocode = require('./utils/geocode')
 
 const app = express()
+const port = process.env.PORT || 3000
+
 
 // Define paths for express config
 const publicDirectoryPath = path.join(__dirname,'../public')
@@ -103,8 +105,8 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server up and running on port 3000')
+app.listen(port, () => {
+    console.log('Server up and running on port ' + port)
 })
 
 //This will never be called as we are using index.html which automatically calls on root
